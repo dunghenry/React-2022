@@ -2,8 +2,8 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import {IParams} from './types';
 const generatePage = (name: string) => {
-    const page = () => require(`./pages/${name}`).default
-    console.log(page)
+    const page = () => require(`./pages/${name}`).default;
+    // console.log(page)
     try {
         return React.createElement(page());
     } catch (error) {
