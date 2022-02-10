@@ -1,7 +1,7 @@
 import { toast } from "react-toastify"
-import { browserLocalPersistence, browserSessionPersistence, createUserWithEmailAndPassword, sendPasswordResetEmail, setPersistence, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { browserLocalPersistence, browserSessionPersistence, createUserWithEmailAndPassword, sendPasswordResetEmail, setPersistence, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { ILogin, IRegister } from "types";
-import { auth, providerFacebook, providerGoogle } from "../../firebase/index";
+import { auth, providerFacebook, providerGoogle } from "../../firebase";
 
 export const registerApi = async (user: IRegister) =>{
     try {
@@ -50,5 +50,13 @@ export const forgotPasswordApi = async (email: string) => {
     } catch (error: any) {
         return toast.error(error.message)
         
+    }
+}
+export const signOutApi = async () =>{
+    try {
+        await signOut(auth)
+        return;
+    } catch (error: any) {
+        return toast.error(error.message)
     }
 }

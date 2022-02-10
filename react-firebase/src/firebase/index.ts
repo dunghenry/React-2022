@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
-
+import { getFirestore } from "firebase/firestore/lite";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -12,6 +12,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
 export const providerGoogle = new GoogleAuthProvider();
 export const providerFacebook = new FacebookAuthProvider();
-export const auth = getAuth();
+export const db = getFirestore(app);
+
