@@ -15,25 +15,26 @@ const ProfileForm: React.FC<IProps> = ({ setOnSetting }) => {
         address: "",
         about: ""
     }
-    const {currentUser} = useAppSelector(state => state.auth);
-    const {profile} = useAppSelector(state => state.profile);
+    const { currentUser } = useAppSelector(state => state.auth);
+    const { profile } = useAppSelector(state => state.profile);
     const dispatch = useAppDispatch();
     const [data, setData] = useState(initialData);
-    const [loading, setLoading] = useState<boolean>(false);
+    const [loading, setLoading] = useState(false);
     const handleInput = (e: ChangeInput) => {
         const { name, value } = e.target;
         // console.log(name, value);
         setData({ ...data, [name]: value });
     }
-    const handleSubmit = async (e: FormEvent) =>{
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        if(!currentUser) return;
+        if (!currentUser) return;
         setLoading(true);
-        await dispatch(profileUpdate({user: currentUser, data}))
+        await dispatch(profileUpdate({ user: currentUser, data }))
         setLoading(false);
+        setOnSetting(false)
     }
     useEffect(() => {
-        if(profile) setData(profile);
+        if (profile) setData(profile);
     }, [profile]);
     return (
         <div>
@@ -160,9 +161,13 @@ const ProfileForm: React.FC<IProps> = ({ setOnSetting }) => {
                                     <button
                                         type="submit"
                                         className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        disabled={loading}
+                                        
                                     >
-                                        Save
+                                        {loading ? "Loading..." : " Save"}
                                     </button>
+
+
 
                                 </div>
                             </div>
@@ -175,7 +180,4 @@ const ProfileForm: React.FC<IProps> = ({ setOnSetting }) => {
     )
 }
 
-
-
-
-export default ProfileForm
+export default ProfileForm;
