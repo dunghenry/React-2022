@@ -1,4 +1,5 @@
 import React from 'react'
+import Account from './Account';
 import ProfileForm from './ProfileForm';
 
 interface IProps{
@@ -11,10 +12,8 @@ const Settings:React.FC<IProps> = ({setOnSetting}) => {
     <div className="p-2 rounded-md shadow">
       {/* ProfileForm */}
       <ProfileForm setOnSetting={setOnSetting}/>
-      {/* Account */}
-      
+      <Account/>
       {/* Change Password */}
-      
       
     </div>
   )

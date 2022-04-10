@@ -1,4 +1,4 @@
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 import { browserLocalPersistence, browserSessionPersistence, createUserWithEmailAndPassword, sendPasswordResetEmail, setPersistence, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { ILogin, IRegister } from "types";
 import { auth, providerFacebook, providerGoogle } from "../../firebase";

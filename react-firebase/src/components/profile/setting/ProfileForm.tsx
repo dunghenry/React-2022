@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useAppSelector } from 'redux/hooks';
 import { ChangeInput } from 'types';
 import { useAppDispatch } from 'redux/hooks';
@@ -162,13 +162,9 @@ const ProfileForm: React.FC<IProps> = ({ setOnSetting }) => {
                                         type="submit"
                                         className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                         disabled={loading}
-                                        
                                     >
                                         {loading ? "Loading..." : " Save"}
                                     </button>
-
-
-
                                 </div>
                             </div>
                         </form>
