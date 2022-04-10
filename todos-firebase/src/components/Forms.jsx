@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { database } from "../firebase/index";
 import { ref, onValue, set, update } from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
-const filterData = (datas, tempId) =>{
-  datas.filter(data =>{
-    if(data.id === tempId){
-      return data.title;
-    }
-  })
-}
+// const filterData = (datas, tempId) =>{
+//   datas.filter(data =>{
+//     if(data.id === tempId){
+//       return data.title;
+//     }
+//   })
+// }
 const Forms = (props) => {
   const { isEdit, setIsEdit, tempId, setTempId } = props;
   const [title, setTitle] = useState("");
@@ -61,7 +61,6 @@ const Forms = (props) => {
     setTempId("")
    
   }
-  console.log(todo);
   return (
     <form onSubmit={handleSubmit} className="py-3 flex justify-around">
       {isEdit ? (

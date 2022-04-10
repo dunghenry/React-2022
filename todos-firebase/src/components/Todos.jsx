@@ -14,7 +14,7 @@ const Todos = (props) => {
             )
         }
        })
-    },[isEdit])
+    },[])
     const deleteTodo = (id) =>{
         remove(ref(database, `${id}`))
     }
@@ -28,7 +28,6 @@ const Todos = (props) => {
     const editTodo = async (id) =>{
         setIsEdit(true);
         setTempId(id);
-        
     }
   return (
     <div>   
