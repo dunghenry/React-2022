@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  margin-top: 5rem;
+}
+.form-container {
+  flex: 0 0 45%;
+}
+
+input,
+button,
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+  display: block;
+}
+input,
+textarea {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 70%;
+}
+
+button {
+  padding: 1rem;
+  background-color: rgb(228, 87, 87);
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+.list-container {
+  flex: 0 0 50%;
+}
+
+.list-item-container {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  border-radius: 3px;
+}
